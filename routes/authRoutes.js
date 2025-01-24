@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
-const passport = require('passport');
+const auth = require('../middleware/auth');
 
 // Register
 router.post('/register', async (req, res) => {
@@ -43,17 +43,14 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// Google OAuth routes
-router.get('/google',
-  passport.authenticate('google', { scope: ['profile', 'email'] })
-);
-
-router.get('/google/callback',
-  passport.authenticate('google', { session: false }),
-  (req, res) => {
-    const token = jwt.sign({ id: req.user._id }, process.env.JWT_SECRET, { expiresIn: '1d' });
-    res.redirect(`${process.env.CLIENT_URL}?token=${token}`);
+// Get current user
+router.get('/me', auth, async (req, res) => {
+  try {
+    const user = await User.findById(req.userId).select('-password');
+    res.json(user);
+  } catch (error) {
+    res.status(500).json({ message: 'Error fetching user profile' });
   }
-);
+});
 
 module.exports = router; 
