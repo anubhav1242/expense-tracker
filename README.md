@@ -109,6 +109,3 @@ A full-stack web application for tracking personal expenses with user authentica
 ## Contributing
 Contributions are welcome! Please open an issue or submit a pull request.
 
-## License
-This project is licensed under the MIT License.
-
