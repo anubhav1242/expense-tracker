@@ -122,9 +122,67 @@ expense-tracker/
 └── index.js            # Backend entry point
 ```
 
+
+## Docker Setup
+
+1. Make sure you have Docker and Docker Compose installed on your system.
+
+2. Clone the repository:
+    ```bash
+    git clone https://github.com/anubhav1242/expense-tracker.git
+    ```
+
+3. Navigate to the project directory:
+    ```bash
+    cd expense-tracker
+    ```
+
+4. Build and run the containers:
+    ```bash
+    docker-compose up --build
+    ```
+
+5. Access the application:
+   - Frontend: http://localhost:3000
+   - Backend API: http://localhost:4000
+   - MongoDB: mongodb://localhost:27017
+
+6. To stop the containers:
+    ```bash
+    docker-compose down
+    ```
+
+### Docker Commands
+
+- Build and start containers:
+  ```bash
+  docker-compose up --build
+  ```
+
+- Start containers in detached mode:
+  ```bash
+  docker-compose up -d
+  ```
+
+- Stop containers:
+  ```bash
+  docker-compose down
+  ```
+
+- View container logs:
+  ```bash
+  docker-compose logs
+  ```
+
+- View logs for a specific service:
+  ```bash
+  docker-compose logs [service_name]
+  ```
+
+- Remove all containers and volumes:
+  ```bash
+  docker-compose down -v
+  ```
+
 ## Contributing
 Contributions are welcome! Please open an issue or submit a pull request.
-
-## License
-This project is licensed under the MIT License.
-
