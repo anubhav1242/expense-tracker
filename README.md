@@ -104,22 +104,6 @@ A full-stack web application for tracking personal expenses with user authentica
 ### User Profile
 - `GET /api/users/me` - Get user profile
 - `PUT /api/users/me` - Update user profile
-
-## Project Structure
-
-expense-tracker/
-├── client/                 # Frontend React application
-│   ├── public/
-│   └── src/
-│       ├── components/     # React components
-│       ├── contexts/      # Context providers
-│       ├── api.js         # API integration
-│       └── App.js         # Main application
-├── config/                # Backend configuration
-├── middleware/           # Express middleware
-├── models/              # Mongoose models
-├── routes/              # API routes
-└── index.js            # Backend entry point
 ```
 
 
@@ -186,3 +170,7 @@ expense-tracker/
 
 ## Contributing
 Contributions are welcome! Please open an issue or submit a pull request.
+
+## License
+This project is licensed under the MIT License.
+
